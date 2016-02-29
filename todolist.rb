@@ -6,12 +6,20 @@ class TodoList
     @items = Array.new # Starts empty! No Items yet!
   end
 
-  def rename_title(new_title)
-    @title = new_title
+  def rename_title(list_title)
+    @title = list_title
   end
 
-  def add_item(new_item)
-    item = Item.new(new_item)
+  # prints the list of items with an indicator of whether it is completed or not
+  def print_list
+    puts "#{@title}"
+    puts "************************"
+    puts @items
+    puts "************************"
+  end
+
+  def add_item(new_item, completed_status = false, due_date)
+    item = Item.new(new_item, completed_status, due_date)
     @items << item
   end
 
@@ -21,29 +29,19 @@ class TodoList
 end
 
 class Item
-  attr_accessor :description, :completed_status
+  attr_accessor :description, :completed_status, :due_date
 
-  def initialize(item_description)
+  def initialize(item_description, completed_status, due_date)
     @description = item_description
-    @completed_status = false
-  end
-
-  def print_stuff
-    puts @description
-  end
-
-
-  def due_date
-
+    @completed_status = completed_status
+    @due_date = due_date
   end
 
   def completed?
-    if @completed_status == true
-      #do something
-    else
-      #do somethine else
-    end
+    @completed_status? "[X]" : "[]"
   end
 
-
+  def to_s
+    "#{completed?} #{@description} #{due_date}"
+  end
 end

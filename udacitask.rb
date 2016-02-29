@@ -2,39 +2,30 @@ require_relative 'todolist.rb'
 
 
 # Creates a new todo list
-my_list = TodoList.new("Shit To Do:")
+my_list = TodoList.new("Jacob's To Do List:")
 
-# Add four new items
-my_list.add_item("Go to the gym")
-my_list.add_item("Draw a plan to save the Lakers")
-my_list.add_item("Drink heavily after realizing there is no hope for the Lakers")
-my_list.add_item("Take out the trash")
+my_list.add_item("a", "Monday")
+my_list.add_item("b", "Tuesday")
+my_list.add_item("c", "Monday")
+my_list.add_item("d", "Wed")
 
-# Print the list
-puts my_list.title
-my_list.print_items
-puts
+my_list.print_list
 
-# Delete the first item
+#Delete shit
 my_list.delete_item(0)
 
 # Print the list
-puts
-my_list.print_items
+my_list.print_list
 
 # Delete the second item
-my_list.delete_item(0)
+my_list.delete_item(1)
 
 # Print the list
-puts
-my_list.print_items
+my_list.print_list
 
 # Update the completion status of the first item to complete
 
-# Print the list
-
 # Update the title of the list
-rename_title("Fuck This!")
-
 
 # Print the list
+my_list.print_list
