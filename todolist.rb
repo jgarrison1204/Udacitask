@@ -6,10 +6,6 @@ class TodoList
     @items = Array.new # Starts empty! No Items yet!
   end
 
-  def rename_title(list_title)
-    @title = list_title
-  end
-
   # prints the list of items with an indicator of whether it is completed or not
   def print_list
     puts "#{@title}"
@@ -26,6 +22,15 @@ class TodoList
   def delete_item(index)
     @items.delete_at(index)
   end
+
+  def update_status(index)
+    @items[index].update_status
+    p @items
+  end
+
+  def new_title(list_title)
+    @title = list_title
+  end
 end
 
 class Item
@@ -38,10 +43,23 @@ class Item
   end
 
   def completed?
-    @completed_status? "[X]" : "[]"
+    @completed_status? "[X]" : "[ ]"
+  end
+
+  def update_status
+   @completed_status = !@completed_status
   end
 
   def to_s
-    "#{completed?} #{@description} #{due_date}"
+    "#{@description} #{due_date} #{completed?}"
   end
 end
+
+#def increment
+#@increment = @items.length
+#@counter = 0
+#while @counter < @increment
+#@item_number = @counter += 1
+#puts @item_number
+#end
+#end
