@@ -1,3 +1,4 @@
+
 class TodoList
   attr_accessor :title, :items
 
@@ -10,12 +11,15 @@ class TodoList
   def print_list
     puts "#{@title}"
     puts "************************"
-    puts @items
+    @items.each do |items|
+      items.print_items
+    end
     puts "************************"
+    puts
   end
 
-  def add_item(new_item, completed_status = false, due_date)
-    item = Item.new(new_item, completed_status, due_date)
+  def add_item(new_item, completed_status = false)
+    item = Item.new(new_item, completed_status)
     @items << item
   end
 
@@ -25,7 +29,6 @@ class TodoList
 
   def update_status(index)
     @items[index].update_status
-    p @items
   end
 
   def new_title(list_title)
@@ -34,12 +37,11 @@ class TodoList
 end
 
 class Item
-  attr_accessor :description, :completed_status, :due_date
+  attr_accessor :description, :completed_status
 
-  def initialize(item_description, completed_status, due_date)
+  def initialize(item_description, completed_status)
     @description = item_description
     @completed_status = completed_status
-    @due_date = due_date
   end
 
   def completed?
@@ -51,15 +53,10 @@ class Item
   end
 
   def to_s
-    "#{@description} #{due_date} #{completed?}"
+    "#{@description} #{completed?}"
+  end
+
+  def print_items
+    puts "Completed:#{completed?} #{@description}"
   end
 end
-
-#def increment
-#@increment = @items.length
-#@counter = 0
-#while @counter < @increment
-#@item_number = @counter += 1
-#puts @item_number
-#end
-#end

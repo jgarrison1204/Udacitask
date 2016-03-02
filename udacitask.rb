@@ -1,13 +1,13 @@
-require_relative 'todolist.rb'
+require_relative 'old.rb'
 
 
 # Creates a new todo list
 my_list = TodoList.new("Jacob's To Do List:")
 
-my_list.add_item("a", "Monday")
-my_list.add_item("b", "Tuesday")
-my_list.add_item("c", "Monday")
-my_list.add_item("d", "Wed")
+my_list.add_item("Go to the gym.")
+my_list.add_item("Make a plan to fix the Lakers.")
+my_list.add_item("Take out the trash.")
+my_list.add_item("Drink heavily after I realize their is no hope for the Lakers.")
 
 # Print the list
 my_list.print_list
@@ -15,7 +15,7 @@ my_list.print_list
 #Delete shit
 my_list.delete_item(0)
 
-# Print the list
+# Print the listr
 my_list.print_list
 
 # Delete the second item
@@ -28,7 +28,7 @@ my_list.print_list
 my_list.update_status(0)
 
 # Update the title of the list
-my_list.new_title("New Title To Do List:")
+my_list.new_title("Basketball Sadness:")
 
 # Print the list
 my_list.print_list
