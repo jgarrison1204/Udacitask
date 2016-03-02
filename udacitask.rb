@@ -1,4 +1,4 @@
-require_relative 'old.rb'
+require_relative 'TodoList.rb'
 
 
 # Creates a new todo list
