@@ -1,0 +1,18 @@
+1. print_to_file  
+   Description: Prints recent to do list with only non-deleted tasks showing
+
+  def print_to_file
+    @print_to_file = File.new("To_Do_List.txt", "w+")
+    @print_to_file.puts "Items on final To Do List:\r\n \r\n"
+    @print_to_file.puts @items
+  end
+
+2. print_final_item_todo
+   Description: Prints items that are not completed or deleted
+
+  def print_final_item_todo(final_item)
+    @items[final_item].print_items
+  end
+
+3. Due_date
+   Description: Added due_date to initialize in the Item class
