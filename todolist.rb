@@ -56,9 +56,10 @@ class Item
     @completed_status = completed_status
   end
 
-  #Turniary operator to return output for todo list
+  #Method that outputs a boolean.
+  #@completed_status will always have True or False value.
   def completed?
-    @completed_status? "[X]" : "[ ]"
+    @completed_status
   end
 
   #Yields the opposite of the completed status.  Default status is false.
@@ -71,7 +72,9 @@ class Item
     "#{completed?} #{@due_date} #{@description}"
   end
 
+  #Prints the out put of items.  Placeholder for values as we call various methods from udacitask.rb
+  #Turniary operator to return output for todo list
   def print_items
-    puts "Completed:#{completed?}----Date due: #{@due_date}----Item: #{@description}"
+    puts "Completed:#{completed? ? "[X]" : "[ ]"}----Date due: #{@due_date}----Item: #{@description}"
   end
 end
