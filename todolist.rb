@@ -1,4 +1,3 @@
-
 class TodoList
   attr_accessor :title, :items
 
@@ -7,7 +6,7 @@ class TodoList
     @items = Array.new # Starts empty! No Items yet!
   end
 
-  # prints the list of items with an indicator of whether it is completed or not
+  # prints the arrary items and title.
   def print_list
     puts "#{@title}"
     puts "************************"
@@ -18,8 +17,9 @@ class TodoList
     puts
   end
 
-  def add_item(new_item, completed_status = false)
-    item = Item.new(new_item, completed_status)
+  #Adds new items to Array.  Calls Item class to do so.
+  def add_item(new_item, due_date, completed_status = false)
+    item = Item.new(new_item, due_date, completed_status)
     @items << item
   end
 
@@ -28,35 +28,50 @@ class TodoList
   end
 
   def update_status(index)
-    @items[index].update_status
+    @items[index].update_status_item
   end
 
   def new_title(list_title)
     @title = list_title
   end
+
+  #Prints most recent to do list with only non-deleted tasks showing
+  def print_to_file
+    @print_to_file = File.new("To_Do_List.txt", "w+")
+    @print_to_file.puts "Items on final To Do List:\r\n \r\n"
+    @print_to_file.puts @items
+  end
+
+  def print_final_item_todo(final_item)
+    @items[final_item].print_items
+  end
 end
 
 class Item
-  attr_accessor :description, :completed_status
+  attr_accessor :description, :completed_status, :due_date
 
-  def initialize(item_description, completed_status)
+  def initialize(item_description, due_date, completed_status)
     @description = item_description
+    @due_date = due_date
     @completed_status = completed_status
   end
 
+  #Turniary operator to return output for todo list
   def completed?
     @completed_status? "[X]" : "[ ]"
   end
 
-  def update_status
+  #Yields the opposite of the completed status.  Default status is false.
+  def update_status_item
    @completed_status = !@completed_status
   end
 
+  #Overwrites the to_s in puts when printing @title
   def to_s
-    "#{@description} #{completed?}"
+    "#{@description} #{completed?} #{@due_date}"
   end
 
   def print_items
-    puts "Completed:#{completed?} #{@description}"
+    puts "Completed:#{completed?}----Date due: #{@due_date}----Item: #{@description}"
   end
 end
