@@ -1,0 +1,53 @@
+commit 9a6f000ab9c67915e135d1f53cf7d474d06e894e
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Thu Mar 3 16:18:42 2016 -0800
+
+    3 additional features added.FINAL
+
+commit bd592acc1dc8ecb18bcf0eb193e02f8a20f37547
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Thu Mar 3 16:10:22 2016 -0800
+
+    3 additional features added-FINAL
+
+commit 487f6b0e31227b073d31698d8787824312369693
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Tue Mar 1 18:05:24 2016 -0800
+
+    Update relative_relative_
+
+commit 352ea5be2c5a4048c4a0122e855f252e060417a6
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Tue Mar 1 17:55:26 2016 -0800
+
+    Print method added to Item class. Basic To Do List Functional
+
+commit 5a5340808b439cd37fc08b1c2feb05d2c2f91b30
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Mon Feb 29 18:31:10 2016 -0800
+
+    Update status method and new title method added
+
+commit da5288fbac9d801dc1980de7e1f77bc2f510d69f
+Author: Garrison <Garrison, Jacob>
+Date:   Sun Feb 28 21:53:54 2016 -0800
+
+    Override to_s method for printing format
+
+commit 813cd7b195f9561107eac9ed19d2a52f27bb0753
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Fri Feb 26 17:24:18 2016 -0800
+
+    Adding and deleting todos functional
+
+commit 986b9aaca2930c6d773479ed1e7f8c8cbd589065
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Fri Feb 26 10:36:22 2016 -0800
+
+    Upload files
+
+commit 5c6c5fe78d1816dc908bcd9139116fdf45fb29cb
+Author: Jacob Garrison <jgarrison1204@gmail.com>
+Date:   Fri Feb 26 10:35:04 2016 -0800
+
+    first commit
