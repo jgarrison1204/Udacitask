@@ -32,5 +32,8 @@ my_list.new_title("Basketball Sadness:")
 # Print the list
 my_list.print_list
 
-#EXTRA FEATURE Print latest todo list to file
+#EXTRA FEATURE Print final list on the requirements to a file
+my_list.print_to_file
+
+#EXTRA FEATURE Print last item on todo list
 my_list.print_final_item_todo(1)

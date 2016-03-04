@@ -35,7 +35,7 @@ class TodoList
     @title = list_title
   end
 
-  #Prints most recent to do list with only non-deleted tasks showing
+  #Prints recent to do list with only non-deleted tasks showing
   def print_to_file
     @print_to_file = File.new("To_Do_List.txt", "w+")
     @print_to_file.puts "Items on final To Do List:\r\n \r\n"
@@ -68,7 +68,7 @@ class Item
 
   #Overwrites the to_s in puts when printing @title
   def to_s
-    "#{@description} #{completed?} #{@due_date}"
+    "#{completed?} #{@due_date} #{@description}"
   end
 
   def print_items
